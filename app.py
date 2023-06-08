@@ -7,10 +7,10 @@ app = Flask(__name__)
 def index():
   
   #### Return a rendered index.html file
-  return ""
+  return render_template("index.html")
 
 @app.route("/recipe/<int:id>")
 def recipe(id):
     
   #### Return a rendered fried_egg.html file
-  return ""
+  return render_template("fried_egg.html")
