@@ -27,9 +27,17 @@ def index():
                          #template_ingredients=ingredients[id])
 
 # THE FOLLOWING CODE IS FOR VARIABLE FILTERS EXERCISE:
+# @app.route("/recipe/<int:id>")
+# def recipe(id):
+#  return render_template("recipe.html", 
+#                       template_recipe=recipes[id], 
+#                        template_ingredients=ingredients[id], 
+#                        template_instructions=instructions[id])
+
 @app.route("/recipe/<int:id>")
 def recipe(id):
   return render_template("recipe.html", 
                          template_recipe=recipes[id], 
+                         template_description=descriptions[id], 
                          template_ingredients=ingredients[id], 
                          template_instructions=instructions[id])
