@@ -72,7 +72,7 @@
 </html>-->
 
 <!-- # THE FOLLOWING CODE IS FOR FOR LOOPS EXERCISE: -->
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
   <body>
     <a href="/">Back To Recipe List</a>
@@ -83,20 +83,48 @@
       <p>A {{ template_recipe }} recipe.</p>
     {% endif %}
     <h3>Ingredients - {{ template_ingredients | length}}</h3>
-    <ul>
+    <ul> -->
       <!-- Implement a for loop to iterate through 
       `template_ingredients`-->
-      {% for ingredient in template_ingredients %}
+      <!--{% for ingredient in template_ingredients %}
         <li>{{ ingredient }}</li> 
       {% endfor%}
     </ul>
     <h3>Instructions</h3>
     <ul>
-    {% for key, instruction in template_instructions|dictsort %}
+    {% for key, instruction in template_instructions|dictsort %}-->
       <!-- Add the correct dictionary element to list 
       the instructions -->
-      <p>{{ key }}: {{ instruction }}</p>
+      <!--<p>{{ key }}: {{ instruction }}</p>
     {% endfor %}
     </ul>
   </body>
-</html>
+</html>-->
+
+
+<!-- # THE FOLLOWING CODE IS FOR FOR INHERITANCE EXERCISE: -->
+{% extends "base.html" %}
+{% block content %}
+    <a href="/">Back To Recipe List</a>
+    <h1>{{ template_recipe | title }}</h1>
+    
+    {% if template_description %}
+      <p>{{ template_description }}</p>
+    {%else%}
+      <p>A {{ template_recipe }} recipe.</p>
+    {% endif %}
+    
+    <h3>Ingredients - {{ template_ingredients | length}}</h3>
+    <ul>
+    {% for ingredient in template_ingredients %}
+      <li>{{ ingredient }}</li>
+    {% endfor %}
+    </ul>
+
+    <h3>Instructions</h3>
+    <ul>
+    {% for key, instruction in template_instructions|dictsort %}
+      <li>{{ instruction }}</li>
+    {% endfor %}
+    </ul>
+  {% endblock %}

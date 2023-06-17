@@ -20,14 +20,24 @@
 </html>-->
 
 <!-- THE FOLLOWING CODE IS FOR THE FOR LOOPS STATEMENTS EXERCISE: -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <body>
     <h1>Cooking By Myself</h1>
-    <p>Welcome to my cookbook. These are recipes I like.</p>
+    <p>Welcome to my cookbook. These are recipes I like.</p> -->
     <!-- Implement a for loop using `template_recipes`-->
-    {% for id, name in template_recipes.items() %}
+    <!-- {% for id, name in template_recipes.items() %}
       <p><a href="/recipe/{{ id }}">{{ name }}</a></p>
     {% endfor %}
   </body>
-</html>
+</html> -->
+
+<!-- THE FOLLOWING CODE IS FOR THE INHERITANCE EXERCISE -->
+{% extends "base.html" %}
+{% block content %}
+    <h1>Cooking By Myself</h1>
+    <p>Welcome to my cookbook. These are recipes I like.</p>
+    {% for id, name in template_recipes.items() %}
+      <p><a href="/recipe/{{ id }}">{{ name | title }}</a></p>
+    {% endfor %}
+{% endblock %}
