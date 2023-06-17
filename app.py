@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
   
   #### Return a rendered index.html file
-  return render_template("index.html")
+  return render_template("index.html", template_recipes=recipes)
 
 # THE FOLLOWING CODE IS FOR THE RENDERING TEMPLATES EXERCISE:
 #@app.route("/recipe/<int:id>")
