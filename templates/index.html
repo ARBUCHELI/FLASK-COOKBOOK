@@ -35,9 +35,11 @@
 <!-- THE FOLLOWING CODE IS FOR THE INHERITANCE EXERCISE -->
 {% extends "base.html" %}
 {% block content %}
+  <div style="background-color: #b7d7e8; text-align: center;">
     <h1>Cooking By Myself</h1>
     <p>Welcome to my cookbook. These are recipes I like.</p>
     {% for id, name in template_recipes.items() %}
       <p><a href="/recipe/{{ id }}">{{ name | title }}</a></p>
+  </div>
     {% endfor %}
 {% endblock %}
